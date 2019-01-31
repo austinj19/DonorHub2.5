@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>DONOR-HUB</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "weidth=device-width, initial-scale = 1">
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .jumbotron{
+                background-color: orangered;
+                color:white;
+            }
+            .bg-grey{
+                background-color: #f6f6f6;
+            }
+            .container-fluid{
+                padding: 60px 50px
+            }
+            .logo{
+                color: orangered;
+                font-size : 200px;
+            }
+            .logo-small{
+                color:orangered;
+                font-size: 50px;
+            }
+            .thumbnail{
+                padding: 0 0 15px 0 ;
+                border: none;
+                border-radius: 0;
+            }
+            .thumbnail img{
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+            }
+            .carousel-control, .carousel-control.left{
+                background-image: none;
+                color: #f4511e;
+            }
+            .carousel-indicators li{
+                border-color: #f4511e;
+            }
+            .carousel-indicators li.active{
+                background-color: #f4511e;
+            }
+            .item h4{
+                font-size: 19px;
+                font-style: italic;
+                margin: 70px 0;
+            }
+            #myCarousel2_img{
+                width: 400px;
+                height: 230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .panel{
+                border: 1px solid #f4511e;
+                border-radius:0;
+                transiti on: box-shadow 0.5s;
+            }
+            .panel:hover{
+                box-shadow: 5px 5px 40px lightgray;
+            }
+            .panel-footer .btn:hover{
+                border: 1px solid #f4511e;
+                background-color: #fff;
+                color: #f4511e;
+            }
+            .panel-heading{
+                color: #f4511e !important;
+                background-color:#f4511e !important;
+                padding: 25px;
+            }
+            .panel-footer{
+                background-color: #fff !important;
+            }
+            .panel-footer h3{
+                font-size: 32px;
+            }
+            .panel-footer h4{
+                color: #aaa;
+                font-size: 14px;
+            }
+            .panel-footer .btn{
+                margin: 15px 0;
+                background-color: #f4511e;
+                color: #fff;
+            }
+            .navbar{
+                background-color: #fff;
+                border: 0;
+                font-size: 12px;
+                letter-spacing: 4px;
+            }
+            .navbar li a, .navbar .navbar-brand{
+                color: #f4511e !important;
+            }
+            .navbar-nav li a:hover, .navbar-nav li.active a{
+                color: #fff !important;
+                background-color: #f4511e !important;
+             }
+            .navbar-default .navbar-toggle{
+                border-color: transparent;
+            }
+            footer .glyphicon{
+                font-size: 20px;
+                margin-bottom: 20px;
+                color: #f4511e;
+            }
+            body{
+                font-family: Lato, sans-serif;
+            }
+            .jumbotron{
+                font-family: Montserrat, sans-serif;
+            }
+            .navbar{
+                font-family: Montserrat, sans-serif;
+            }
+            .card {
+                /* Add shadows to create the "card" effect */
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+
+            /* On mouse-over, add a deeper shadow */
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            /* Add some padding inside the card container */
+            .card-size {
+                padding: 2px 2px;
+                width: 400px;
+                height: 230px;
+            }
+            /* album_list.html */
+            div.album-list{
+                margin: 20px 50px;
+            }
+
+            div.album-list-photo{
+                float: left;
+                width: 150px;
+                height: 180px;
+            }
+
+
+            /* album_detail.html */
+            div.album-detail{
+                margin: 30px 10px;
+            }
+
+            div.album-detail-photo{
+                float: left;
+                width: 220px;
+                height: 220px;
+            }
+
+            div.album-detail-photo>li{
+                font-size: 10px;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+
+            /* photo_detail.html */
+            table.photo-detail{
+                margin: 30px 50px 0 50px;
+                border: 1px solid #CCC;
+                padding: 20px 20px;
+            }
+
+            table.photo-detail td{
+                width: 50%;
+            }
+
+            table.photo-detail ul li{
+                font-weight: bold;
+            }
+
+            table.photo-detail ul p{
+                font-style: italic;
+            }
+
+            /* common */
+            img.thumbnail{
+                border: 3px solid #CCC;
+            }
+
+            div.clear_float{
+                clear: both;
+            }
+
+            /* Form Error */
+
+            .errornote {
+                display: block;
+                margin: 5px 0;
+                border: 1px solid #c30;
+                background: #fcf;
+                padding: 5px 25px;
+                color: #c30;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            /* Authentication Forms */
+
+            fieldset {
+                border: 1px solid #ccc;
+            }
+
+            .aligned label {
+                float: left;
+                width: 170px;
+                padding: 3px 10px 0 0;
+            }
+
+            .form-row {
+                padding: 10px;
+                font-size: 11px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .submit-row {
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                text-align: right;
+            }
+
+            .submit-row input {
+                margin: 10px;
+                background: #ffc;
+            }
+
+
+        </style>
+    </head>
+    <body id="myPage" data-spy="scroll" data-target=".navbar">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'mainpage_ex' %}">DONOR-HUB</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'mainpage_ex' %}">ABOUT</a></li>
+
+                        <li><a href="{% url 'mainpage_ex' %}">PORTFOLIO</a></li>
+                        <li><a href="{% url 'manual_home' %}">MANUAL</a> </li>
+
+                        {% if user.is_active %}
+                        <li><a href="{% url 'password_change' %}">Change Password</a></li>
+                        <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                        {% else %}
+                        <li><a href="{% url 'register' %}">JOIN</a></li>
+                        <li><a href="{% url 'login' %}">LOGIN</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'photo:index' %}">THE HUB</a></li>
+                        {% firstof user.get_short_name user.get_username %}
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </nav>
+        <div id="signup" class="container-fluid text-center">
+            <br><br>
+            <h1>Welcome to the Hub.</h1>
+            <form action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for specific items; e.g., black nike shoes  " name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="content">
+
+                <h1>Photo Create/Update - {{user}}</h1>
+
+                {% if form.is_multipart %}
+                <form enctype="multipart/form-data" method="post" action=".">
+                {% else %}
+                <form method="post" action=".">
+                {% endif %}
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <p class="errornote">Wrong! Please correct the error(s) below.</p>
+                {% endif %}
+
+                <p>This is a creation or update form for your photo.</p>
+
+                <fieldset class="aligned">
+
+                    <div class="form-row">
+                        {{ form.image.label_tag }} {{ form.image }}
+                    </div>
+
+                    <div class="form-row">
+                        {{ form.album.label_tag }} {{ form.album }}
+                    </div>
+
+                    <div class="form-row">
+                        {{ form.title.label_tag }} {{ form.title }}
+                    </div>
+
+                    <div class="form-row">
+                        {{ form.condition.label_tag }} {{ form.condition }}
+                    </div>
+
+                    <div class="form-row">
+                        {{ form.size.label_tag }} {{ form.size }}
+                    </div>
+
+                    <div class="form-row">
+                        {{ form.description.label_tag }} {{ form.description }}
+                    </div>
+
+                </fieldset>
+
+                <div class="submit-row">
+                    <input type="submit" value="Submit"/>
+                </div>
+
+                <script type="text/javascript">document.getElementById('id_album').focus();</script>
+
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>
